@@ -53,30 +53,6 @@
         
         <button type="submit" class="submit-btn">LOGIN</button>
     </form>
-    <script>
-        document.getElementById('login-container').addEventListener('submit', function(e) {
-          e.preventDefault();
-          
-          var password = document.getElementById('password-input').value;
-          
-          fetch('/check-password', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: 'password=' + encodeURIComponent(password)
-          })
-          .then(response => response.text())
-          .then(result => {
-            if (result === 'Correct') {
-              location.replace("./index.html")
-              window.open("index.html")
-            } else {
-              alert('Incorrect password');
-            }
-          })
-          .catch(error => console.error('Error:', error));
-        });
-        </script>
+    
 </body>
 </html>
